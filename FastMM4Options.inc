@@ -323,16 +323,29 @@ Set the default options for FastMM here.
 {Group the options you use for release and debug versions below}
 {$ifdef Release}
   {Specify the options you use for release versions below}
-  {.$undef FullDebugMode}
-  {.$undef CheckHeapForCorruption}
-  {.$define ASMVersion}
-  {.$undef EnableMemoryLeakReporting}
-  {.$undef UseOutputDebugString}
+  {$define ASMVersion}
+  {$define EnableMMX}
+  {$define NoDebugInfo}
+  {$define NoMessageBoxes}
+
+  {$undef CheckHeapForCorruption}
+  {$undef EnableBackwardCompatibleMMSharing}
+  {$undef EnableMemoryLeakReporting}
+  {$undef FullDebugMode}
+  {$undef UseOutputDebugString}
 {$else}
   {Specify the options you use for debugging below}
-  {.$define FullDebugMode}
-  {.$define EnableMemoryLeakReporting}
-  {.$define UseOutputDebugString}
+  {$define CheckHeapForCorruption}
+  {$define ClearLogFileOnStartup}
+  {$define FullDebugMode}
+  {$define EnableMemoryLeakReporting}
+  {$define HideMemoryLeakHintMessage}
+  {$define NoMessageBoxes}
+  {$define CatchUseOfFreedInterfaces}
+
+  {$undef ASMVersion}
+  {$undef EnableBackwardCompatibleMMSharing}
+  {$undef RequireDebuggerPresenceForLeakReporting}
 {$endif}
 
 {--------------------Compilation Options For borlndmm.dll---------------------}
