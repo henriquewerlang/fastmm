@@ -343,6 +343,7 @@ Set the default options for FastMM here.
   {$define NoMessageBoxes}
   {$define CatchUseOfFreedInterfaces}
 
+  {$undef RawStackTraces}
   {$undef ASMVersion}
   {$undef EnableBackwardCompatibleMMSharing}
   {$undef RequireDebuggerPresenceForLeakReporting}
